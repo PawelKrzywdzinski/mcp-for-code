@@ -1,0 +1,149 @@
+name: 🐛 Bug Report
+description: Report a bug or issue with Xcode MCP Server
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug! Please fill out this form to help us understand and fix the issue.
+
+  - type: checkboxes
+    id: preliminary-checks
+    attributes:
+      label: Preliminary Checks
+      description: Please confirm you have done the following
+      options:
+        - label: I have searched existing issues to ensure this bug hasn't been reported
+          required: true
+        - label: I have read the documentation and troubleshooting guide
+          required: true
+        - label: I am using the latest version of Xcode MCP Server
+          required: true
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: Describe the bug...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Detailed steps to reproduce the behavior
+      placeholder: |
+        1. Run command `/scan ./MyApp.xcodeproj`
+        2. See error...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What you expected to happen
+      placeholder: The project should scan successfully...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened instead
+      placeholder: Error message appeared...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating System
+      description: Which operating system are you using?
+      options:
+        - macOS (recommended)
+        - Linux
+        - Windows
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: os-version
+    attributes:
+      label: OS Version
+      description: Specific version of your operating system
+      placeholder: "e.g., macOS 14.0, Ubuntu 22.04"
+    validations:
+      required: true
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node.js Version
+      description: Output of `node --version`
+      placeholder: "e.g., v20.11.0"
+    validations:
+      required: true
+
+  - type: input
+    id: package-version
+    attributes:
+      label: Xcode MCP Server Version
+      description: Version of the package you're using
+      placeholder: "e.g., 1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: xcode-version
+    attributes:
+      label: Xcode Version (if applicable)
+      description: Version of Xcode if the bug relates to project parsing
+      placeholder: "e.g., 15.2"
+
+  - type: input
+    id: claude-code-version
+    attributes:
+      label: Claude Code Version
+      description: Version of Claude Code you're using
+      placeholder: "e.g., latest"
+
+  - type: textarea
+    id: error-logs
+    attributes:
+      label: Error Logs
+      description: Any error messages or logs
+      render: shell
+      placeholder: Paste error logs here...
+
+  - type: textarea
+    id: project-info
+    attributes:
+      label: Project Information
+      description: Information about your Xcode project (if relevant)
+      placeholder: |
+        - Project size: 50 files
+        - Language: Swift 5.9
+        - Dependencies: SPM packages
+        - Special configuration: ...
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other context about the problem
+      placeholder: Screenshots, configuration files, etc.
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Would you like to contribute to fixing this bug?
+      options:
+        - label: I would like to work on fixing this bug
+          required: false

@@ -1,0 +1,158 @@
+name: 💡 Feature Request
+description: Suggest a new feature or enhancement for Xcode MCP Server
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a new feature! Please fill out this form to help us understand your request.
+
+  - type: checkboxes
+    id: preliminary-checks
+    attributes:
+      label: Preliminary Checks
+      description: Please confirm you have done the following
+      options:
+        - label: I have searched existing issues to ensure this feature hasn't been requested
+          required: true
+        - label: I have read the documentation to confirm this feature doesn't exist
+          required: true
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description
+      description: A clear and concise description of the feature you'd like to see
+      placeholder: Describe the feature...
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: Describe the problem this feature would solve or the workflow it would improve
+      placeholder: |
+        As a developer, I want to...
+        So that I can...
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-workaround
+    attributes:
+      label: Current Workaround
+      description: How do you currently handle this situation?
+      placeholder: Currently I have to manually...
+
+  - type: dropdown
+    id: feature-category
+    attributes:
+      label: Feature Category
+      description: Which category best describes this feature?
+      options:
+        - Token Optimization
+        - Project Analysis
+        - Command Interface
+        - Documentation Generation
+        - Dependency Management
+        - Performance Improvement
+        - Configuration/Settings
+        - Integration
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - Low - Nice to have
+        - Medium - Would significantly improve workflow
+        - High - Critical for my use case
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: How do you think this feature should work?
+      placeholder: |
+        I think the feature should work like this:
+        1. User runs command...
+        2. System processes...
+        3. Output shows...
+
+  - type: textarea
+    id: alternative-solutions
+    attributes:
+      label: Alternative Solutions
+      description: Any alternative approaches you've considered?
+      placeholder: |
+        Alternative 1: ...
+        Alternative 2: ...
+
+  - type: textarea
+    id: examples
+    attributes:
+      label: Examples
+      description: Provide examples of how this feature would be used
+      placeholder: |
+        Example command:
+        /newfeature ./MyApp.xcodeproj --option=value
+        
+        Expected output:
+        ✅ Feature completed successfully
+
+  - type: textarea
+    id: similar-tools
+    attributes:
+      label: Similar Tools
+      description: Are there similar features in other tools that you'd like to reference?
+      placeholder: Tool X has a similar feature that works like...
+
+  - type: checkboxes
+    id: compatibility
+    attributes:
+      label: Compatibility Considerations
+      description: Please check any that apply
+      options:
+        - label: This feature should work with all Xcode versions
+        - label: This feature should work on all supported platforms
+        - label: This feature might break existing functionality
+        - label: This feature requires new dependencies
+
+  - type: dropdown
+    id: complexity
+    attributes:
+      label: Implementation Complexity
+      description: How complex do you think this feature would be to implement?
+      options:
+        - Low - Simple addition
+        - Medium - Moderate changes needed
+        - High - Significant changes required
+        - Unknown
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other context, screenshots, mockups, or links
+      placeholder: Add any additional information...
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution
+      description: Would you like to contribute to implementing this feature?
+      options:
+        - label: I would like to work on implementing this feature
+          required: false
+        - label: I can provide design/UX input for this feature
+          required: false
+        - label: I can help with testing this feature
+          required: false

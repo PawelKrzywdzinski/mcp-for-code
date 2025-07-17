@@ -1,240 +1,291 @@
-# Contributing to MCP for Code
+# Contributing to Xcode MCP Server
 
-Thank you for your interest in contributing to MCP for Code! This document provides guidelines and instructions for contributing to the project.
+Thank you for your interest in contributing to the Xcode MCP Server! This project aims to provide 98% token savings for iOS/macOS development with Claude Code.
 
-## Code of Conduct
+## 🚀 Quick Start
 
-By participating in this project, you agree to abide by our Code of Conduct. Please be respectful and professional in all interactions.
+1. **Fork the repository**
+2. **Clone your fork**
+3. **Install dependencies**: `npm install`
+4. **Build the project**: `npm run build`
+5. **Run tests**: `npm test`
 
-## Getting Started
+## 🛠 Development Setup
 
 ### Prerequisites
+- Node.js 18+
+- TypeScript 5+
+- Xcode 15+ (for testing)
+- Claude Code
 
-- Node.js 18.x or higher
-- npm 9.x or higher
-- Git
+### Local Development
+```bash
+# Clone the repository
+git clone https://github.com/PolyakPawel/mcp-for-code.git
+cd mcp-for-code
 
-### Setting Up the Development Environment
+# Install dependencies
+npm install
 
-1. Fork the repository on GitHub
-2. Clone your fork locally:
-   ```bash
-   git clone https://github.com/your-username/mcp-for-code.git
-   cd mcp-for-code
-   ```
+# Start development server
+npm run dev
 
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
+# Run tests in watch mode
+npm run test:watch
 
-4. Copy the example configuration:
-   ```bash
-   cp config.example.json config.json
-   ```
-
-5. Build the project:
-   ```bash
-   npm run build
-   ```
-
-6. Run tests to ensure everything is working:
-   ```bash
-   npm test
-   ```
-
-### Development Workflow
-
-1. Create a new branch for your feature or bugfix:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-2. Make your changes and ensure they follow the coding standards:
-   ```bash
-   npm run lint
-   npm run format
-   ```
-
-3. Write tests for your changes:
-   ```bash
-   npm test
-   ```
-
-4. Commit your changes with a clear message:
-   ```bash
-   git commit -m "feat: add new code analysis tool"
-   ```
-
-5. Push to your fork:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-6. Create a pull request on GitHub
-
-## Project Structure
-
-```
-mcp-for-code/
-├── src/
-│   ├── index.ts           # Main MCP server entry point
-│   ├── tools/             # Individual tool implementations
-│   ├── utils/             # Utility functions
-│   └── __tests__/         # Test files
-├── docs/                  # Documentation
-├── examples/              # Usage examples
-├── config.example.json    # Example configuration
-└── README.md
+# Lint code
+npm run lint
 ```
 
-## Coding Standards
+## 📋 Contributing Guidelines
 
-### TypeScript Guidelines
-
-- Use TypeScript for all code
-- Follow the existing code style (enforced by ESLint and Prettier)
-- Include type annotations for function parameters and return types
-- Use interfaces for complex object types
-- Prefer `const` over `let` when possible
-
-### Code Quality
-
-- Write clear, self-documenting code
-- Add comments for complex logic
+### Code Style
+- Use TypeScript for all new code
+- Follow ESLint configuration
+- Write comprehensive tests
+- Document public APIs
 - Keep functions small and focused
-- Use meaningful variable and function names
-- Follow the single responsibility principle
 
-### Testing
+### Commit Messages
+Use conventional commits format:
+```
+type(scope): description
 
-- Write unit tests for all new functionality
-- Aim for at least 80% code coverage
-- Use descriptive test names
-- Group related tests with `describe` blocks
+feat(optimizer): add extreme compression technique
+fix(parser): handle empty project files
+docs(readme): update installation instructions
+test(utils): add dependency analyzer tests
+```
+
+### Pull Request Process
+
+1. **Create a feature branch** from `main`
+```bash
+git checkout -b feature/your-feature-name
+```
+
+2. **Make your changes** following the style guide
+
+3. **Add tests** for new functionality
+```bash
+npm test
+```
+
+4. **Update documentation** if needed
+
+5. **Ensure linting passes**
+```bash
+npm run lint
+```
+
+6. **Create a pull request** with:
+   - Clear title and description
+   - Link to related issues
+   - Screenshots/examples if applicable
+
+## 🧪 Testing
+
+### Running Tests
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+### Test Structure
+```
+src/
+├── __tests__/
+│   ├── index.test.ts          # Main server tests
+│   ├── utils/
+│   │   ├── parser.test.ts     # Parser tests
+│   │   └── optimizer.test.ts  # Optimizer tests
+│   └── integration/
+│       └── e2e.test.ts        # End-to-end tests
+```
+
+### Writing Tests
+- Use Jest framework
+- Test both happy and error paths
 - Mock external dependencies
+- Aim for >80% code coverage
 
-Example test structure:
-```typescript
-describe('CodeAnalyzer', () => {
-  describe('analyzeComplexity', () => {
-    it('should calculate complexity correctly for simple functions', () => {
-      // Test implementation
-    });
-  });
-});
+## 🏗 Architecture
+
+### Project Structure
+```
+src/
+├── index.ts                    # Main MCP server
+├── utils/
+│   ├── xcode-parser.ts        # Xcode project parsing
+│   ├── context-manager.ts     # Context optimization
+│   └── dependency-analyzer.ts # Dependency analysis
+├── optimization/
+│   └── master-optimizer.ts    # Token optimization engine
+└── __tests__/                 # Test files
 ```
 
-## Pull Request Guidelines
+### Key Components
 
-### Before Submitting
+1. **MCP Server** (`index.ts`)
+   - Handles 8 main commands
+   - Manages token statistics
+   - Implements caching system
 
-- Ensure all tests pass: `npm test`
-- Ensure code follows style guidelines: `npm run lint`
-- Update documentation if needed
-- Add or update tests for your changes
+2. **Xcode Parser** (`utils/xcode-parser.ts`)
+   - Parses .xcodeproj files
+   - Analyzes Swift code
+   - Extracts project metadata
 
-### Pull Request Description
+3. **Context Manager** (`utils/context-manager.ts`)
+   - Scores file relevance
+   - Manages token budgets
+   - Builds optimized context
 
-Please include:
-- A clear description of the changes
-- The motivation for the changes
-- Any breaking changes
-- Screenshots (if applicable)
-- Related issue numbers
+4. **Master Optimizer** (`optimization/master-optimizer.ts`)
+   - Implements 6 optimization techniques
+   - Provides intelligent technique selection
+   - Tracks performance metrics
 
-### Pull Request Template
+## 🎯 Areas for Contribution
 
-```markdown
-## Description
-Brief description of the changes.
+### High Priority
+- **Optimization Techniques**: New token compression methods
+- **Language Support**: Objective-C, SwiftUI improvements
+- **Performance**: Faster project scanning and analysis
+- **Documentation**: More examples and guides
 
-## Type of Change
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Breaking change
-- [ ] Documentation update
+### Medium Priority
+- **Testing**: Additional test coverage
+- **Error Handling**: Better error messages and recovery
+- **Configuration**: More customization options
+- **Integrations**: Support for other IDEs
 
-## Testing
-- [ ] Unit tests added/updated
-- [ ] Integration tests added/updated
-- [ ] Manual testing completed
+### Low Priority
+- **UI/UX**: Better command-line interface
+- **Monitoring**: Advanced analytics
+- **Platform Support**: Windows/Linux compatibility
 
-## Checklist
-- [ ] Code follows project style guidelines
-- [ ] Self-review completed
-- [ ] Documentation updated
-- [ ] Tests added/updated
-- [ ] All tests pass
-```
-
-## Adding New Tools
-
-When adding new MCP tools, please:
-
-1. Create a new file in `src/tools/`
-2. Follow the existing tool structure
-3. Include comprehensive input validation
-4. Add proper error handling
-5. Write unit tests
-6. Update the README with tool documentation
-
-Example tool structure:
-```typescript
-export interface ToolNameArgs {
-  param1: string;
-  param2?: number;
-}
-
-export async function toolName(args: ToolNameArgs): Promise<ToolResponse> {
-  // Implementation
-}
-```
-
-## Documentation
-
-- Update README.md for new features
-- Add JSDoc comments for public APIs
-- Include usage examples
-- Update configuration documentation if needed
-
-## Bug Reports
+## 🐛 Bug Reports
 
 When reporting bugs, please include:
-- Clear description of the issue
-- Steps to reproduce
-- Expected vs actual behavior
-- Environment information (Node.js version, OS, etc.)
-- Error logs if applicable
 
-## Feature Requests
+1. **Environment details**:
+   - OS version
+   - Node.js version
+   - Xcode version
+   - Claude Code version
 
-When requesting features, please:
-- Provide a clear use case
-- Explain why the feature would be valuable
-- Consider backward compatibility
-- Suggest implementation approach if possible
+2. **Steps to reproduce**:
+   - Exact commands used
+   - Project structure
+   - Expected vs actual behavior
 
-## Release Process
+3. **Logs and output**:
+   - Error messages
+   - Stack traces
+   - Debug output
 
-1. Update version in `package.json`
-2. Update `CHANGELOG.md`
-3. Create a release PR
-4. Tag the release after merging
-5. Publish to npm (maintainers only)
+### Bug Report Template
+```markdown
+## Bug Description
+Brief description of the issue
 
-## Getting Help
+## Environment
+- OS: macOS 14.0
+- Node.js: 20.11.0
+- Xcode: 15.2
+- Claude Code: latest
 
-If you need help:
-- Check existing issues on GitHub
-- Ask questions in pull request comments
-- Reach out to maintainers
+## Steps to Reproduce
+1. Run `/scan ./MyApp.xcodeproj`
+2. See error...
 
-## Recognition
+## Expected Behavior
+Should scan project successfully
 
-Contributors will be recognized in:
-- GitHub contributors list
-- Release notes
-- Project documentation
+## Actual Behavior
+Error: Cannot read project file
 
-Thank you for contributing to MCP for Code!
+## Additional Context
+- Project size: 50 files
+- Swift version: 5.9
+```
+
+## 💡 Feature Requests
+
+We welcome feature requests! Please:
+
+1. **Check existing issues** first
+2. **Describe the use case** clearly
+3. **Explain the benefit** to users
+4. **Consider implementation complexity**
+
+### Feature Request Template
+```markdown
+## Feature Description
+Brief description of the proposed feature
+
+## Use Case
+Why is this feature needed? What problem does it solve?
+
+## Proposed Solution
+How should this feature work?
+
+## Alternative Solutions
+Any alternative approaches considered?
+
+## Additional Context
+Mockups, examples, or related issues
+```
+
+## 🔐 Security
+
+If you discover a security vulnerability, please:
+
+1. **Do NOT** open a public issue
+2. **Email**: security@your-domain.com
+3. **Include**: Detailed description and steps to reproduce
+4. **Wait**: For acknowledgment before public disclosure
+
+## 📄 Documentation
+
+### Updating Documentation
+- Update README.md for user-facing changes
+- Update API docs for code changes
+- Add examples for new features
+- Keep inline comments current
+
+### Documentation Standards
+- Use clear, concise language
+- Include code examples
+- Provide troubleshooting tips
+- Keep formatting consistent
+
+## 🏆 Recognition
+
+Contributors will be:
+- Added to the CONTRIBUTORS.md file
+- Mentioned in release notes
+- Invited to join the core team (for significant contributions)
+
+## 📞 Getting Help
+
+Need help contributing?
+
+- **GitHub Discussions**: Ask questions and get help
+- **GitHub Issues**: Report bugs and request features
+- **Email**: pawel@your-domain.com
+
+## 📜 License
+
+By contributing, you agree that your contributions will be licensed under the MIT License.
+
+---
+
+Thank you for helping make iOS/macOS development more efficient! 🎯
