@@ -1,0 +1,63 @@
+{
+  "supportedLanguages": [
+    "javascript",
+    "typescript",
+    "python",
+    "java",
+    "go",
+    "rust",
+    "cpp",
+    "csharp"
+  ],
+  "defaultFormatter": "prettier",
+  "testFramework": "jest",
+  "documentationStyle": "jsdoc",
+  "formatting": {
+    "prettier": {
+      "printWidth": 80,
+      "tabWidth": 2,
+      "useTabs": false,
+      "semi": true,
+      "singleQuote": true,
+      "quoteProps": "as-needed",
+      "trailingComma": "es5",
+      "bracketSpacing": true,
+      "arrowParens": "avoid"
+    }
+  },
+  "analysis": {
+    "maxComplexity": 20,
+    "maxFileSize": 50000,
+    "ignorePatterns": [
+      "node_modules",
+      "dist",
+      "build",
+      "coverage",
+      "*.min.js"
+    ]
+  },
+  "codeGeneration": {
+    "templates": {
+      "react": {
+        "useTypeScript": true,
+        "includeTests": true,
+        "includeDocs": true
+      },
+      "node": {
+        "useTypeScript": true,
+        "includeTests": true,
+        "includeDocs": true
+      }
+    }
+  },
+  "refactoring": {
+    "autoFormat": true,
+    "preserveComments": true,
+    "createBackup": true
+  },
+  "documentation": {
+    "includeExamples": true,
+    "generateToc": true,
+    "outputPath": "docs"
+  }
+}
