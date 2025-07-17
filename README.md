@@ -241,3 +241,11 @@ Pull requests welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 ```bash
 curl -fsSL https://raw.githubusercontent.com/PawelKrzywdzinski/mcp-for-code/main/install.sh | sh
 ```
+
+## ☕ Support the Project
+
+If this tool saved you time and tokens, consider buying me a coffee (or cigarettes... or a shiny new MacBook) 😄
+
+[![PayPal](https://img.shields.io/badge/PayPal-Support-blue.svg?logo=paypal)](https://www.paypal.com/paypalme/PawelKrzywdzinski)
+
+*Every donation helps fuel late-night coding sessions and keeps the token optimization algorithms running smooth! ☕🚬💻*
