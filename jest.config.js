@@ -1,11 +1,11 @@
 export default {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  extensionsToTreatAsEsm: ['.ts'],
+  testMatch: ['**/__tests__/**/*.test.ts'],
+  collectCoverage: false,
   transform: {
-    '^.+\\.ts$': ['ts-jest', {
-      useESM: true
-    }]
+    '^.+\\.ts$': 'ts-jest'
   },
-  testMatch: ['**/__tests__/**/*.test.ts']
+  moduleFileExtensions: ['ts', 'js'],
+  testPathIgnorePatterns: ['/node_modules/', '/dist/']
 };
