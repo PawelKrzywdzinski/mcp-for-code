@@ -53,7 +53,8 @@ config.local.json
 
 # Test outputs
 test-results/
-__tests__/
+# Note: Keep __tests__ directory for Jest tests
+# __tests__/
 
 # Documentation build
 docs/build/
