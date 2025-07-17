@@ -2,14 +2,14 @@
 
 **98% Token Savings** for iOS/macOS development with Claude Code
 
-[![CI](https://github.com/PolyakPawel/mcp-for-code/actions/workflows/ci.yml/badge.svg)](https://github.com/PolyakPawel/mcp-for-code/actions/workflows/ci.yml)
+[![CI](https://github.com/PawelKrzywdzinski/mcp-for-code/actions/workflows/ci.yml/badge.svg)](https://github.com/PawelKrzywdzinski/mcp-for-code/actions/workflows/ci.yml)
 [![npm version](https://badge.fury.io/js/xcode-mcp-server.svg)](https://badge.fury.io/js/xcode-mcp-server)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## ⚡ One-Command Installation
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/PolyakPawel/mcp-for-code/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/PawelKrzywdzinski/mcp-for-code/main/install.sh | sh
 ```
 
 ## 🚀 Quick Start
@@ -136,7 +136,7 @@ If one-command install doesn't work:
 
 ```bash
 # 1. Clone and install
-git clone https://github.com/PolyakPawel/mcp-for-code.git
+git clone https://github.com/PawelKrzywdzinski/mcp-for-code.git
 cd mcp-for-code
 npm install && npm run build && npm install -g .
 
@@ -216,7 +216,7 @@ done
 3. **Start** saving tokens immediately
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/PolyakPawel/mcp-for-code/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/PawelKrzywdzinski/mcp-for-code/main/install.sh | sh
 /scan ./MyApp.xcodeproj level=extreme
 ```
 
@@ -230,14 +230,14 @@ Pull requests welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## 📞 Support
 
-- [GitHub Issues](https://github.com/PolyakPawel/mcp-for-code/issues)
-- [Documentation](https://github.com/PolyakPawel/mcp-for-code/wiki)
-- [Discussions](https://github.com/PolyakPawel/mcp-for-code/discussions)
+- [GitHub Issues](https://github.com/PawelKrzywdzinski/mcp-for-code/issues)
+- [Documentation](https://github.com/PawelKrzywdzinski/mcp-for-code/wiki)
+- [Discussions](https://github.com/PawelKrzywdzinski/mcp-for-code/discussions)
 
 ---
 
 **Start saving tokens today!** 🎯
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/PolyakPawel/mcp-for-code/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/PawelKrzywdzinski/mcp-for-code/main/install.sh | sh
 ```

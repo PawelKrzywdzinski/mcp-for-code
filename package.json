@@ -31,12 +31,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PolyakPawel/mcp-for-code.git"
+    "url": "git+https://github.com/PawelKrzywdzinski/mcp-for-code.git"
   },
   "bugs": {
-    "url": "https://github.com/PolyakPawel/mcp-for-code/issues"
+    "url": "https://github.com/PawelKrzywdzinski/mcp-for-code/issues"
   },
-  "homepage": "https://github.com/PolyakPawel/mcp-for-code#readme",
+  "homepage": "https://github.com/PawelKrzywdzinski/mcp-for-code#readme",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^0.5.0",
     "@types/glob": "^8.1.0",

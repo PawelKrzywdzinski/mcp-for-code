@@ -107,7 +107,7 @@ We aim to respond to security reports according to the following timeline:
 1. **Verify Installation**: Only install from official sources
    ```bash
    # Official installation
-   curl -fsSL https://raw.githubusercontent.com/PolyakPawel/mcp-for-code/main/install.sh | sh
+   curl -fsSL https://raw.githubusercontent.com/PawelKrzywdzinski/mcp-for-code/main/install.sh | sh
    
    # Or via npm
    npm install -g xcode-mcp-server
@@ -217,7 +217,7 @@ We follow industry-standard security practices:
 
 - **Primary Contact**: security@your-domain.com
 - **Maintainer**: pawel@your-domain.com
-- **GitHub**: @PolyakPawel
+- **GitHub**: @PawelKrzywdzinski
 
 ### PGP Key
 

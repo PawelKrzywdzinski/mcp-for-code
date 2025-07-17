@@ -14,7 +14,7 @@ NC='\033[0m' # No Color
 
 # Configuration
 PACKAGE_NAME="xcode-mcp-server"
-REPO_URL="https://github.com/PolyakPawel/mcp-for-code"
+REPO_URL="https://github.com/PawelKrzywdzinski/mcp-for-code"
 CLAUDE_CONFIG_DIR="$HOME/.config/claude-code"
 CLAUDE_CONFIG_FILE="$CLAUDE_CONFIG_DIR/mcp.json"
 

@@ -21,7 +21,7 @@ Thank you for your interest in contributing to the Xcode MCP Server! This projec
 ### Local Development
 ```bash
 # Clone the repository
-git clone https://github.com/PolyakPawel/mcp-for-code.git
+git clone https://github.com/PawelKrzywdzinski/mcp-for-code.git
 cd mcp-for-code
 
 # Install dependencies
