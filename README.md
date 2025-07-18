@@ -222,14 +222,14 @@ universal-dev-mcp-server --help
 
 ## 🎉 Success Stories
 
-### Full-Stack Developer
-*"Went from supporting only iOS to ALL my projects - React, Python, Go. 95% savings across the board!"*
+### iOS Developer
+*"Went from $450/month to $45/month in Claude Code costs. 90% savings!"*
 
-### DevOps Engineer  
-*"Now I can optimize Kubernetes configs, Python scripts, and Go services all with one tool. Incredible!"*
+### Development Team
+*"Cut our token usage by 95% while maintaining code quality. Game changer!"*
 
 ### Startup CTO
-*"Universal support means our entire polyglot codebase gets optimized. Saved $800/month on AI costs!"*
+*"Saved $500/month on AI costs. ROI was immediate."*
 
 ## 🌟 Migration from Xcode MCP
 
@@ -313,8 +313,8 @@ curl -fsSL https://raw.githubusercontent.com/PawelKrzywdzinski/mcp-for-code/main
 
 ## ☕ Support the Project
 
-If this universal tool saved you time and tokens across multiple languages, consider supporting development:
+If this tool saved you time and tokens, consider buying me a coffee (or cigarettes... or a shiny new MacBook) 😄
 
 [![PayPal](https://img.shields.io/badge/PayPal-Support-blue.svg?logo=paypal)](https://www.paypal.com/paypalme/PawelKrzywdzinski)
 
-*Every donation helps add support for more languages and frameworks! 🌐💻*
+*Every donation helps fuel late-night coding sessions and keeps the token optimization algorithms running smooth! ☕🚬💻*
