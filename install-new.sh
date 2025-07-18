@@ -95,8 +95,14 @@ install_package() {
     
     if git clone "$REPO_URL" .; then
         print_status "Building from source..."
-        if npm install && npm run build && chmod +x dist/index.js && npm install -g .; then
-            print_success "Package built and installed successfully"
+        if npm install && npm run build && chmod +x dist/index.js && npm pack; then
+            print_status "Installing package..."
+            if npm install -g xcode-mcp-server-*.tgz; then
+                print_success "Package built and installed successfully"
+            else
+                print_error "Failed to install package"
+                exit 1
+            fi
         else
             print_error "Failed to build from source"
             exit 1
