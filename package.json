@@ -1,16 +1,20 @@
 {
-  "name": "xcode-mcp-server",
-  "version": "1.0.4",
-  "description": "MCP Server for Xcode/iOS development with 98% token savings",
-  "main": "dist/index.js",
+  "name": "universal-dev-mcp-server",
+  "version": "2.0.0",
+  "description": "Universal Development MCP Server with 98% token savings for all programming languages",
+  "main": "dist/main.js",
   "type": "module",
   "bin": {
+    "universal-dev-mcp-server": "dist/main.js",
+    "universal-dev-mcp": "dist/main.js",
     "xcode-mcp": "dist/index.js"
   },
   "scripts": {
-    "build": "tsc && chmod +x dist/index.js",
-    "start": "node dist/index.js",
-    "dev": "tsx src/index.ts",
+    "build": "tsc && chmod +x dist/main.js && chmod +x dist/index.js",
+    "start": "node dist/main.js",
+    "start:legacy": "node dist/index.js",
+    "dev": "tsx src/main.ts",
+    "dev:legacy": "tsx src/index.ts",
     "test": "jest",
     "lint": "eslint src/**/*.ts",
     "clean": "rm -rf dist",
@@ -18,6 +22,14 @@
   },
   "keywords": [
     "mcp",
+    "universal",
+    "development",
+    "javascript",
+    "typescript",
+    "python",
+    "java",
+    "go",
+    "rust",
     "xcode",
     "ios",
     "macos",
@@ -25,9 +37,10 @@
     "claude",
     "ai",
     "optimization",
-    "token-savings"
+    "token-savings",
+    "multi-language"
   ],
-  "author": "Xcode MCP Server Team",
+  "author": "Universal MCP Server Team",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -45,7 +58,8 @@
     "dotenv": "^16.3.1",
     "glob": "^10.3.10",
     "xml2js": "^0.6.2",
-    "yaml": "^2.3.4"
+    "yaml": "^2.3.4",
+    "@iarna/toml": "^2.2.5"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
