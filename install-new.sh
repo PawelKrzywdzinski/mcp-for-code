@@ -199,8 +199,9 @@ test_installation() {
     
     # Test basic functionality
     print_status "Testing basic functionality..."
-    if xcode-mcp --version &> /dev/null; then
+    if xcode-mcp --version > /dev/null 2>&1; then
         print_success "Basic functionality test passed"
+        xcode-mcp --version
     else
         print_warning "Basic functionality test failed, but installation appears successful"
     fi

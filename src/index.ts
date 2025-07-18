@@ -793,6 +793,65 @@ Updated: ${new Date(cache.lastUpdated).toLocaleDateString()}`;
   }
 }
 
-// Start the server
-const server = new XcodeMCPServer();
-server.run().catch(console.error);
+// CLI handling
+function showVersion() {
+  console.log('xcode-mcp-server version 1.0.0');
+  console.log('98% Token Savings for iOS/macOS development with Claude Code');
+}
+
+function showHelp() {
+  console.log(`
+🚀 Xcode MCP Server v1.0.0
+
+This is an MCP (Model Context Protocol) server for Claude Code.
+It provides 98% token savings for iOS/macOS development.
+
+Usage:
+  xcode-mcp [options]
+
+Options:
+  --version, -v    Show version information
+  --help, -h       Show this help message
+
+MCP Server Commands (use within Claude Code):
+  /scan <project>     Scan and analyze Xcode project
+  /context <project>  Get optimized context for development
+  /optimize <project> Optimize token usage with advanced algorithms
+  /docs <project>     Generate intelligent documentation
+  /deps <project>     Analyze project dependencies
+  /search <query>     Search documentation and code
+  /stats             Show token usage statistics
+  /limits            Show current token limits
+
+Installation:
+  This server should be configured in your Claude Code MCP settings.
+  It runs as a background process and communicates via stdio.
+
+For more information, visit:
+  https://github.com/PawelKrzywdzinski/mcp-for-code
+`);
+}
+
+// Parse command line arguments
+const args = process.argv.slice(2);
+
+if (args.includes('--version') || args.includes('-v')) {
+  showVersion();
+  process.exit(0);
+}
+
+if (args.includes('--help') || args.includes('-h')) {
+  showHelp();
+  process.exit(0);
+}
+
+// If no CLI args, run as MCP server
+if (args.length === 0) {
+  const server = new XcodeMCPServer();
+  server.run().catch(console.error);
+} else {
+  // Handle unknown arguments
+  console.error('Unknown arguments:', args.join(' '));
+  console.error('Use --help for usage information');
+  process.exit(1);
+}
