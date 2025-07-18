@@ -167,13 +167,23 @@ test_installation() {
         
         if [[ -d "$npm_bin" ]]; then
             print_status "Checking for xcode-mcp in npm bin..."
-            if [[ -f "$npm_bin/xcode-mcp" ]]; then
+            if [[ -L "$npm_bin/xcode-mcp" ]]; then
                 print_status "Found xcode-mcp symlink"
                 ls -la "$npm_bin/xcode-mcp"
                 
                 # Test if the target file exists
                 target=$(readlink "$npm_bin/xcode-mcp")
-                if [[ -f "$npm_bin/$target" ]]; then
+                print_status "Symlink target: $target"
+                
+                # Handle relative paths
+                if [[ "$target" == /* ]]; then
+                    target_path="$target"
+                else
+                    target_path="$npm_bin/$target"
+                fi
+                
+                print_status "Checking target file: $target_path"
+                if [[ -f "$target_path" ]]; then
                     print_status "Target file exists, adding to PATH..."
                     export PATH="$npm_bin:$PATH"
                     
@@ -197,7 +207,8 @@ test_installation() {
                         exit 1
                     fi
                 else
-                    print_error "Target file does not exist: $npm_bin/$target"
+                    print_error "Target file does not exist: $target_path"
+                    print_status "Target should be: $target"
                     exit 1
                 fi
             else
