@@ -9,7 +9,7 @@
 ## ⚡ One-Command Installation
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/PawelKrzywdzinski/mcp-for-code/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/PawelKrzywdzinski/mcp-for-code/main/install-new.sh | sh
 ```
 
 ## 🚀 Quick Start
@@ -216,7 +216,7 @@ done
 3. **Start** saving tokens immediately
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/PawelKrzywdzinski/mcp-for-code/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/PawelKrzywdzinski/mcp-for-code/main/install-new.sh | sh
 /scan ./MyApp.xcodeproj level=extreme
 ```
 
@@ -239,7 +239,7 @@ Pull requests welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 **Start saving tokens today!** 🎯
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/PawelKrzywdzinski/mcp-for-code/main/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/PawelKrzywdzinski/mcp-for-code/main/install-new.sh | sh
 ```
 
 ## ☕ Support the Project
