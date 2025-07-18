@@ -101,7 +101,7 @@ class XcodeMCPServer {
     this.server = new Server(
       {
         name: 'xcode-mcp-server',
-        version: '1.0.0',
+        version: '1.0.4',
       },
       {
         capabilities: {
@@ -795,13 +795,13 @@ Updated: ${new Date(cache.lastUpdated).toLocaleDateString()}`;
 
 // CLI handling
 function showVersion() {
-  console.log('xcode-mcp-server version 1.0.0');
+  console.log('xcode-mcp-server version 1.0.4');
   console.log('98% Token Savings for iOS/macOS development with Claude Code');
 }
 
 function showHelp() {
   console.log(`
-🚀 Xcode MCP Server v1.0.0
+🚀 Xcode MCP Server v1.0.4
 
 This is an MCP (Model Context Protocol) server for Claude Code.
 It provides 98% token savings for iOS/macOS development.

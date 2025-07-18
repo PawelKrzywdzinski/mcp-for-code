@@ -1,6 +1,6 @@
 {
   "name": "xcode-mcp-server",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "MCP Server for Xcode/iOS development with 98% token savings",
   "main": "dist/index.js",
   "type": "module",

@@ -89,32 +89,25 @@ check_requirements() {
 install_package() {
     print_status "Installing Xcode MCP Server..."
     
-    # Install globally from npm
-    if npm install -g "$PACKAGE_NAME"; then
-        print_success "Package installed successfully"
-    else
-        print_error "Failed to install package. Trying alternative method..."
-        
-        # Alternative: Clone from GitHub
-        temp_dir=$(mktemp -d)
-        cd "$temp_dir"
-        
-        if git clone "$REPO_URL" .; then
-            print_status "Building from source..."
-            if npm install && npm run build && npm install -g .; then
-                print_success "Package built and installed successfully"
-            else
-                print_error "Failed to build from source"
-                exit 1
-            fi
+    # Install from GitHub source (ensures latest version)
+    temp_dir=$(mktemp -d)
+    cd "$temp_dir"
+    
+    if git clone "$REPO_URL" .; then
+        print_status "Building from source..."
+        if npm install && npm run build && npm install -g .; then
+            print_success "Package built and installed successfully"
         else
-            print_error "Failed to clone repository"
+            print_error "Failed to build from source"
             exit 1
         fi
-        
-        cd - > /dev/null
-        rm -rf "$temp_dir"
+    else
+        print_error "Failed to clone repository"
+        exit 1
     fi
+    
+    cd - > /dev/null
+    rm -rf "$temp_dir"
 }
 
 configure_claude() {
