@@ -95,7 +95,7 @@ install_package() {
     
     if git clone "$REPO_URL" .; then
         print_status "Building from source..."
-        if npm install && npm run build && npm install -g .; then
+        if npm install && npm run build && chmod +x dist/index.js && npm install -g .; then
             print_success "Package built and installed successfully"
         else
             print_error "Failed to build from source"
@@ -159,33 +159,55 @@ test_installation() {
         print_success "Command 'xcode-mcp' is available"
     else
         print_error "Command 'xcode-mcp' not found in PATH"
-        print_status "Trying to add to PATH..."
+        print_status "Debugging installation..."
         
-        # Add npm global bin to PATH
+        # Debug npm installation
         npm_bin=$(npm config get prefix)/bin
+        print_status "npm bin directory: $npm_bin"
+        
         if [[ -d "$npm_bin" ]]; then
-            export PATH="$npm_bin:$PATH"
-            if command -v xcode-mcp &> /dev/null; then
-                print_success "Command found after adding to PATH"
+            print_status "Checking for xcode-mcp in npm bin..."
+            if [[ -f "$npm_bin/xcode-mcp" ]]; then
+                print_status "Found xcode-mcp symlink"
+                ls -la "$npm_bin/xcode-mcp"
                 
-                # Add to shell profile
-                shell_profile=""
-                if [[ "$SHELL" == *"zsh"* ]]; then
-                    shell_profile="$HOME/.zshrc"
-                elif [[ "$SHELL" == *"bash"* ]]; then
-                    shell_profile="$HOME/.bashrc"
-                fi
-                
-                if [[ -n "$shell_profile" ]]; then
-                    echo "export PATH=\"$npm_bin:\$PATH\"" >> "$shell_profile"
-                    print_status "Added to PATH in $shell_profile"
+                # Test if the target file exists
+                target=$(readlink "$npm_bin/xcode-mcp")
+                if [[ -f "$npm_bin/$target" ]]; then
+                    print_status "Target file exists, adding to PATH..."
+                    export PATH="$npm_bin:$PATH"
+                    
+                    if command -v xcode-mcp &> /dev/null; then
+                        print_success "Command found after adding to PATH"
+                        
+                        # Add to shell profile
+                        shell_profile=""
+                        if [[ "$SHELL" == *"zsh"* ]]; then
+                            shell_profile="$HOME/.zshrc"
+                        elif [[ "$SHELL" == *"bash"* ]]; then
+                            shell_profile="$HOME/.bashrc"
+                        fi
+                        
+                        if [[ -n "$shell_profile" ]]; then
+                            echo "export PATH=\"$npm_bin:\$PATH\"" >> "$shell_profile"
+                            print_status "Added to PATH in $shell_profile"
+                        fi
+                    else
+                        print_error "Command still not found after adding to PATH"
+                        exit 1
+                    fi
+                else
+                    print_error "Target file does not exist: $npm_bin/$target"
+                    exit 1
                 fi
             else
-                print_error "Command still not found"
+                print_error "xcode-mcp symlink not found in $npm_bin"
+                print_status "Available files:"
+                ls -la "$npm_bin" | grep xcode || echo "No xcode-related files found"
                 exit 1
             fi
         else
-            print_error "npm bin directory not found"
+            print_error "npm bin directory not found: $npm_bin"
             exit 1
         fi
     fi
