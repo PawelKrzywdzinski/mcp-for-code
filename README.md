@@ -28,10 +28,17 @@ curl -fsSL https://raw.githubusercontent.com/PawelKrzywdzinski/mcp-for-code/main
 ## 🚀 Quick Start
 
 ```bash
-# Scan any project type
+# Scan any project type - NOW with auto-documentation!
 /scan ./my-react-app level=extreme
 /scan ./my-python-project level=extreme
 /scan ./MyApp.xcodeproj level=extreme
+
+# ✨ NEW: Auto-creates comprehensive workspace:
+# ├── 📄 README.md (enhanced)
+# ├── 📁 .claude-mcp/
+# │   ├── 📚 API_DOCS.md
+# │   ├── 🛠️ DEVELOPMENT_GUIDE.md
+# │   └── ⚙️ project-context.json
 
 # Get context for any language
 /context ./my-node-project "implement REST API" tokens=800 mode=fast
@@ -260,6 +267,41 @@ Existing users get **backward compatibility**:
 /search "async programming" language=python
 /search "middleware patterns" language=go  
 /search "component lifecycle" framework=react
+```
+
+## 🆕 Auto-Documentation & Fast Session Startup
+
+### Comprehensive Project Workspace
+When you first scan a project, MCP now automatically creates:
+
+- **📄 Enhanced README.md** - Complete project overview
+- **📁 .claude-mcp/ workspace** with:
+  - **📚 API_DOCS.md** - Auto-generated API documentation
+  - **🛠️ DEVELOPMENT_GUIDE.md** - MCP-optimized workflow guide
+  - **⚙️ project-context.json** - Session restoration data
+
+### Lightning-Fast Subsequent Sessions
+```bash
+# First scan: Creates complete workspace
+/scan ./my-project level=extreme
+# ✅ README.md (Enhanced)
+# ✅ .claude-mcp/API_DOCS.md  
+# ✅ .claude-mcp/DEVELOPMENT_GUIDE.md
+# ✅ .claude-mcp/project-context.json
+
+# Later sessions: Instant restoration
+/scan ./my-project level=extreme
+# 🔄 Session restored - Workspace ready!
+# 📁 Documentation: Available
+# ⚡ Context: Pre-loaded
+```
+
+### Intelligent Documentation Generation
+```bash
+# Language-aware documentation
+/docs ./swift-app type=readme     # Swift-optimized README
+/docs ./python-api type=all       # Python API docs + guides
+/docs ./react-app type=readme     # React component documentation
 ```
 
 ## 🚀 Getting Started
